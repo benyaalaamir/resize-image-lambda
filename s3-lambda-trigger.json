@@ -1,0 +1,20 @@
+{
+    "LambdaFunctionConfigurations": [
+        {
+            "LambdaFunctionArn": "arn:aws:lambda:<your-region>:<your-account-id>:function:resize-image-lambda",
+            "Events": [
+                "s3:ObjectCreated:*"
+            ],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Name": "prefix",
+                            "Value": "uploads/"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
